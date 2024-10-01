@@ -1,0 +1,18 @@
+<div class="content" [ngClass]="{ 'open': showMenu, 'closed': !showMenu }">
+    <img src="./assets/image/Logo.svg" alt="" srcset="" (click)="toggleMenu()">
+    <div class="menu">
+        <span class="merriweather-bold">Olá, Fabio!</span>
+        <div class="opcoes">
+            <span class="merriweather-regular">Inicio</span>
+            <span class="merriweather-regular">Agendamentos</span>
+            <span class="merriweather-regular">Produtos</span>
+            <span class="merriweather-regular">Contatos</span>
+            <span class="merriweather-regular">Localização</span>
+            <span class="merriweather-regular">Administração</span>
+        </div>
+    </div>
+</div>
+
+<div class="LogoFlutuante" *ngIf="showLogoFlutuante">
+    <img src="./assets/image/Logo.svg" alt="" srcset="" (click)="toggleMenu()">
+</div>

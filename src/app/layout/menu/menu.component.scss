@@ -1,0 +1,83 @@
+.content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--DarkCharcoal);
+    width: 120px;
+    height: 100vh;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+
+    gap: 25px;
+
+    transition: left 250ms ease-in-out;
+    z-index: 99;
+}
+
+.content.open {
+    left: 0;
+    animation: openMenu 250ms ease-in-out forwards;
+}
+
+.content.closed {
+    left: -200px;
+    animation: closeMenu 250ms ease-in-out forwards;
+}
+
+@keyframes openMenu {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: -200px;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 25px;
+
+    .merriweather-bold {
+        color: white;
+        font-size: 18px;
+        cursor: default
+    }
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+
+    .merriweather-regular {
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
+.LogoFlutuante {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 99;
+}

@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --DarkCharcoal: #403734;
+    --LightTaupe: #736E6A;
+    --Copper: #BF8049;
+    --SandyBrown: #F2A25C;
+    --Linen: #F2E5D5;
+}
+
+body {
+    background-color: var(--Linen);
+    margin: 0px;
+}
+
+.merriweather-light {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+}
