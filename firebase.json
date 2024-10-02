@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/barbearia-foratto",
     "ignore": [
       "firebase.json",
       "**/.*",
