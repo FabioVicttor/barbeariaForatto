@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "undici",
+              "faye-websocket"
+            ],
             "outputPath": "dist/barbearia-foratto",
             "index": "src/index.html",
             "browser": "src/main.ts",
