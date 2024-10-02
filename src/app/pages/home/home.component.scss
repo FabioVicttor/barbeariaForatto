@@ -38,7 +38,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     color: white;
     z-index: 2;
 
@@ -147,7 +147,7 @@
 .tituloProdutos {
     display: flex;
     gap: 6px;
-    align-items: end;
+    align-items: flex-end;
 
     h1 {
         margin: 0px;
