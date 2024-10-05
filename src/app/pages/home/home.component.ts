@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { AuthService } from '../../core/auth/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,12 @@ import { environment } from '../../../environments/environment';
 })
 export class HomeComponent {
 
-  constructor() {
+  constructor(private auth: AuthService) {
     console.log("enviroment prod: ", environment.production)
+  }
+
+  validaLogin(){
+    this.auth.loginWithGoogle()
   }
 
 }
