@@ -19,6 +19,25 @@
             <span class="merriweather-regular">Lorem ipsum odor amet, consectetuer adipiscing elit. Orci integer lorem
                 sodales ante ligula ornare
                 eleifend.</span>
+
+            <div class="contentBarbeiros">
+                <div class="barbeiros" *ngFor="let barbeiro of barbeiros; index as i">
+                    <div class="contentBarbeiro">
+                        <div>
+                            <img class="contentImagemBarbeiro" [src]="barbeiro.imagem" alt="">
+                        </div>
+                        <div class="contentDetalhesBarbeiro">
+                            <span class="merriweather-bold nomeBarbeiro">{{barbeiro.nome}}</span>
+                            <span class="merriweather-regular descricaoBarbeiro">{{barbeiro.descricao}}</span>
+                            <div class="botaoAgendar">
+                                <img src="./assets/image/shopping_bag_branco.svg" alt="">
+                                <span class="merriweather-bold">Agendar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr *ngIf="i+1 < barbeiros.length">
+                </div>
+            </div>
         </div>
     </div>
     <div class="blocoLocalizacao">
@@ -45,7 +64,9 @@
         </div>
 
         <div class="produtos">
-
+            <div class="produto" *ngFor="let produto of produtos">
+                <img [src]="produto.imagem" alt="" srcset="">
+            </div>
         </div>
 
         <div class="descricaoBloco">
@@ -53,6 +74,13 @@
                 de produtos como gel para
                 cabelo, pomadas modeladoras e muito mais. Quer saber mais? Explore nossa coleção completa e encontre o
                 produto ideal para você!</span>
+
+            <div class="contentBotao">
+                <div class="botaoVerMais">
+                    <img src="./assets/image/shopping_bag_branco.svg" alt="">
+                    <span class="merriweather-bold">Ver mais</span>
+                </div>
+            </div>
         </div>
     </div>
 

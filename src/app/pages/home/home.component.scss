@@ -97,6 +97,49 @@
     }
 }
 
+.contentBarbeiros {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+.contentBarbeiro{
+    display: flex;
+    gap: 10px;
+}
+.barbeiros {
+    display: flex;
+    flex-direction: column;
+
+    hr{
+        width: 100%;
+        border-color: rgba(0, 0, 0, 0.35);
+    }
+    
+
+    .contentImagemBarbeiro {
+        width: 135px;
+        height: 165px;
+        border-radius: 15px;
+    }
+
+    .contentDetalhesBarbeiro {
+        display: flex;
+        flex-direction: column;
+
+        .nomeBarbeiro {
+            font-size: 24px;
+        }
+
+        .descricaoBarbeiro {
+            font-size: 16px;
+        }
+
+        .botaoAgendar {
+            margin-top: 9px;
+        }
+    }
+}
+
 .blocoLocalizacao {
     width: 100%;
     background-color: var(--LightTaupe);
@@ -155,10 +198,71 @@
     }
 }
 
-.produtos {}
+.produtos {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.produto {
+    img {
+        width: 184px;
+        height: 184px;
+        border-radius: 15px;
+    }
+}
 
 .descricaoBloco {
     margin-top: 25px;
+
+    span {
+        font-size: 16px;
+    }
+}
+
+.contentBotao {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.botaoVerMais {
+    width: 170px;
+    height: 40px;
+    background-color: var(--Copper);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: white;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    span {
+        font-size: 16px;
+    }
+}
+
+.botaoAgendar {
+    width: 227px;
+    height: 40px;
+    background-color: var(--Copper);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: white;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
 
     span {
         font-size: 16px;

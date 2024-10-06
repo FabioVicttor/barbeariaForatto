@@ -1,35 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Database, ref, set, get } from '@angular/fire/database';
-
+import { Database, ref, set, get, child } from '@angular/fire/database';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-export class AuthService {
-    
-    constructor(private db: Database) {
+export class DatabaseService {
 
-    }
+  constructor(private db: Database) { }
 
-    // Para gravar dados
-    writeUserData(userId: string, name: string, email: string) {
-        set(ref(this.db, 'users/' + userId), {
-            username: name,
-            email: email
-        });
-    }
+  // Função para escrever dados no Realtime Database
+  async writeData(path: string, data: any) {
+    const dbRef = ref(this.db, path);
+    try {
+          await set(dbRef, data);
+          return console.log('Dados gravados com sucesso!');
+      } catch (error) {
+          return console.error('Erro ao gravar dados: ', error);
+      }
+  }
 
-    // Para ler dados
-    getUserData(userId: string) {
-        const userRef = ref(this.db, 'users/' + userId);
-        return get(userRef).then((snapshot) => {
-            if (snapshot.exists()) {
-                console.log(snapshot.val());
-            } else {
-                console.log("Nenhum dado disponível");
-            }
-        }).catch((error) => {
-            console.error(error);
-        });
-    }
+  // Função para ler dados do Realtime Database
+  async readData(path: string) {
+    const dbRef = ref(this.db);
+    return get(child(dbRef, path))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          return snapshot.val();
+        } else {
+          console.log('Nenhum dado disponível');
+          return null;
+        }
+      })
+      .catch((error) => console.error('Erro ao ler dados: ', error));
+  }
 }
