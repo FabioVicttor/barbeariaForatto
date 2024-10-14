@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -12,21 +12,35 @@ export class MenuComponent {
   showMenu: boolean = false;
   showLogoFlutuante: boolean = true;
 
-  constructor() {
+  constructor(private elementRef: ElementRef) {
 
   }
 
-  toggleMenu() {
-    if (this.showMenu) {
-      // Se o menu está aberto, fecha e atrasa a exibição da logo
-      this.showMenu = false;
-      setTimeout(() => {
-        this.showLogoFlutuante = true;
-      }, 250);
+  // Detectar cliques fora do menu
+  @HostListener('document:click', ['$event'])
+  clickOut(event: MouseEvent) {
+    const clickedInsideMenu = this.elementRef.nativeElement.contains(event.target);
+
+    if (clickedInsideMenu) {
+      if (this.showMenu) {
+        // Se o menu está aberto, fecha e atrasa a exibição da logo
+        this.showMenu = false;
+        setTimeout(() => {
+          this.showLogoFlutuante = true;
+        }, 250);
+      } else {
+        // Abre o menu e oculta a logo imediatamente
+        this.showLogoFlutuante = false;
+        this.showMenu = true;
+      }
     } else {
-      // Abre o menu e oculta a logo imediatamente
-      this.showLogoFlutuante = false;
-      this.showMenu = true;
+      if (this.showMenu) {
+        // Se o menu está aberto, fecha e atrasa a exibição da logo
+        this.showMenu = false;
+        setTimeout(() => {
+          this.showLogoFlutuante = true;
+        }, 250);
+      }
     }
   }
 }
