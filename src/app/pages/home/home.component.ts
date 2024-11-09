@@ -5,6 +5,7 @@ import { DatabaseService } from '../../core/dataBase/database.service';
 import { Produto } from '../../core/models/produtos';
 import { CommonModule } from '@angular/common';
 import { Barbeiro } from '../../core/models/barbeiro';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent {
   produtos!: Array<Produto>
   barbeiros!: Array<Barbeiro>
 
-  constructor(private auth: AuthService, private dbService: DatabaseService) {
+  constructor(private auth: AuthService, private dbService: DatabaseService, private router: Router) {
     console.log("enviroment prod: ", environment.production)
     this.fetchData()
   }
@@ -43,6 +44,14 @@ export class HomeComponent {
       this.barbeiros = data;
       console.log(this.barbeiros);
     });
+  }
+
+  redirectToAgendamento() {
+    this.router.navigate(['agendamento'])
+  }
+
+  redirectToProdutos() {
+    this.router.navigate(['produtos'])
   }
 
 }

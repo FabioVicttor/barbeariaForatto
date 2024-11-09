@@ -1,0 +1,235 @@
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardApresentacaoTela {
+    background-color: var(--DarkCharcoal);
+    height: 65px;
+    width: 360px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    padding: 35px;
+
+    h1 {
+        margin: 0px;
+    }
+
+    .contentTextApresentacao {
+        margin-left: 85px;
+    }
+}
+
+.contentFiltros {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    input {
+        width: 300px;
+        height: 40px;
+        border-color: var(--Copper);
+        background-color: transparent;
+        border-radius: 15px;
+        border-style: solid;
+        box-sizing: border-box;
+        padding-left: 12px;
+        padding-right: 12px;
+
+    }
+
+    input::placeholder {
+        color: var(--Copper);
+        font-size: 16px;
+        opacity: 0.6;
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+
+.contentOrdem {
+    display: flex;
+    gap: 12px;
+}
+
+.botaoOrdenar {
+    width: 103px;
+    height: 36px;
+    box-sizing: border-box;
+    color: white;
+    background-color: var(--Copper);
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+.listaOrdenar {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 150px;
+
+    :nth-child(1):hover {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    :nth-child(3):hover {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.listaOrdenar .opcao {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--Copper);
+}
+
+.listaOrdenar .opcao:hover {
+    background-color: #f1f1f1;
+}
+
+.botaoOrdemAtiva {
+    box-sizing: border-box;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-style: solid;
+    background-color: transparent;
+    border-color: var(--Copper);
+    border-width: 1px;
+    height: 36px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        font-size: 16px;
+        color: var(--Copper);
+    }
+}
+
+.detalhesPesquisa {
+    text-align: end;
+
+    span {
+        font-size: 12px;
+        color: var(--Copper);
+
+    }
+}
+
+.contentProdutos {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.listaProdutos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.produto {
+    position: relative;
+    width: 360px;
+    height: 256px;
+    background-color: var(--SandyBrown);
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    hr {
+        width: 100%;
+        border-color: rgba(0, 0, 0, 0.35);
+    }
+
+}
+
+.precoProduto {
+    position: absolute;
+    top: 20px;
+    /* ajuste conforme necessário */
+    right: 20px;
+    /* ajuste conforme necessário */
+    background-color: var(--Copper);
+    /* ou uma cor que desejar */
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 16px;
+    /* ajuste conforme necessário */
+    font-weight: bold;
+
+    span {
+        font-size: 12px;
+        color: white;
+    }
+}
+
+.contentImgProduto {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 123px;
+        height: 123px;
+        border-radius: 15px;
+    }
+
+}
+
+.detalhesProduto {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentControlePagina {
+    display: flex;
+    gap: 8px;
+}
+
+.botaoControle {
+    width: 42px;
+    height: 42px;
+    background-color: var(--Copper);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.botaoControleNumerico {
+    width: 42px;
+    height: 42px;
+    background-color: var(--SandyBrown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+    span {
+        color: white;
+    }
+}

@@ -1,1 +1,66 @@
-<p>produtos works!</p>
+<div class="content">
+    <div class="cardApresentacaoTela">
+        <div class="contentTextApresentacao">
+            <h1 class="merriweather-black">Olá Fabio!</h1>
+            <span class="merriweather-regular">Veja abaixo os nossos produtos.</span>
+        </div>
+    </div>
+    <div class="contentFiltros">
+        <input type="Buscar" placeholder="Buscar...">
+        <div class="contentOrdem">
+            <div>
+                <div class="botaoOrdenar" (click)="toggleDropdown()">
+                    <img src="./assets/image/Filtrar.svg" alt="" srcset="">
+                    <span class="merriweather-regular">Ordenar</span>
+                </div>
+                <div class="listaOrdenar" *ngIf="dropdownVisible">
+                    <div class="opcao" (click)="ordernar('1')">Preço crescente</div>
+                    <div class="opcao" (click)="ordernar('2')">Preço decrescente</div>
+                    <div class="opcao" (click)="ordernar('3')">Ordem alfabetica</div>
+                </div>
+            </div>
+            <div class="ordemAtiva" *ngIf="filtro.valor">
+                <div class="botaoOrdemAtiva" (click)="limpaOrdem()">
+                    <img src="./assets/image/X.svg" alt="" srcset="">
+                    <span class="merriweather-regular">{{filtro.label}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="detalhesPesquisa">
+            <span class="merriweather-regular">{{controlaListaProdutos.produtos.length}} Produdos |
+                {{controlaListaProdutos.paginas}} Paginas</span>
+        </div>
+
+        <div class="contentProdutos">
+            <div class="listaProdutos" *ngFor="let item of controlaListaProdutos.produtos; index as i">
+                <div class="produto">
+                    <div class="precoProduto">
+                        <span class="merriweather-regular"> {{item.valor | currency:'BRL':'symbol':'1.2-2'}}</span>
+                    </div>
+                    <div class="contentImgProduto">
+                        <img [src]="item.imagem" alt="">
+                    </div>
+                    <hr>
+                    <div class="detalhesProduto">
+                        <span class="merriweather-black">{{item.nome}}</span>
+                        <span class="merriweather-regular">{{item.descricao}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contentControlePagina">
+                <div class="botaoControle">
+                    <img src="./assets/image/Chevronleft.svg" alt="">
+                </div>
+
+                <div class="botaoControleNumerico"
+                    *ngFor="let item of [].constructor(controlaListaProdutos.paginas); index as i">
+                    <span class="merriweather-regular">{{i+1}}</span>
+                </div>
+
+                <div class="botaoControle">
+                    <img src="./assets/image/Chevronright.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
